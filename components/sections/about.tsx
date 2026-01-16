@@ -1,18 +1,19 @@
-import { Separator } from "@radix-ui/react-dropdown-menu";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-24">
-      <div className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight">Sobre mim</h2>
-        <Separator />
+    <div className="space-y-4">
+      <h2 className="text-xl font-semibold tracking-tight">Sobre mim</h2>
 
-        <p className="max-w-3xl text-muted-foreground">
-          Transformo ideias em produtos com boa experiência de uso. Gosto de
-          manter código limpo, componentizado e bem padronizado. Tenho foco em
-          front-end e em construir interfaces consistentes.
-        </p>
-      </div>
-    </section>
+      <p className="max-w-3xl text-muted-foreground">
+        Ajudo a transformar ideias em experiências, criando interfaces
+        intuitivas e responsivas. Com atenção aos detalhes, buscando sempre
+        entregar soluções superem as expectativas dos usuários.
+        <Button variant="link" className="p-0 sm:p-2">
+          <Link href="/about-me">Ver mais</Link>
+        </Button>
+      </p>
+    </div>
   );
 }
