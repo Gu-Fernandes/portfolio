@@ -15,12 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
 
-const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "Sobre", href: "#about" },
-  { label: "Projetos", href: "#projects" },
-  { label: "Contato", href: "#contact" },
-] as const;
+import { NAV_ITEMS } from "./nav-items";
 
 export function Header() {
   return (

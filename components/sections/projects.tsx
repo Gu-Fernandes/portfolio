@@ -1,8 +1,21 @@
+"use client";
+
+import * as React from "react";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@radix-ui/react-dropdown-menu";
-import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import { ArrowRight } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import { cn } from "@/lib/utils";
 
 const PROJECTS = [
   {
@@ -27,41 +40,103 @@ const PROJECTS = [
     title: "Central de Ajuda",
     description:
       "App de um ecosistema empresarial, para criação e acompanhamentos dos chamados criados.",
-    tags: ["Next.js", "TypeScript", "Shadcn UI"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+  },
+  {
+    title: "Salas de Reunião",
+    description:
+      "App de um ecosistema empresarial, utilizado para acompanhar disponibilidade e reservas das salas de reuniões do grupo.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
   },
 ] as const;
 
 export function ProjectsSection() {
+  const autoplay = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })
+  );
+
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [selected, setSelected] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setSelected(api.selectedScrollSnap());
+
+    const onSelect = () => setSelected(api.selectedScrollSnap());
+
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
+
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-semibold tracking-tight">Projetos</h2>
-      <Separator />
 
-      <div className="grid gap-4 md:grid-cols-2">
-        {PROJECTS.map((p) => (
-          <Card key={p.title} className="transition hover:shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-base">{p.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex h-full flex-col gap-4">
-              <p className="text-sm text-muted-foreground">{p.description}</p>
+      <Carousel
+        setApi={setApi}
+        plugins={[autoplay.current]}
+        opts={{ align: "start", loop: true }}
+        className="w-full"
+      >
+        <CarouselContent>
+          {PROJECTS.map((p) => (
+            <CarouselItem key={p.title} className="basis-full md:basis-1/2">
+              <Card className="h-full transition hover:shadow-sm">
+                <CardHeader>
+                  <CardTitle className="text-base">{p.title}</CardTitle>
+                </CardHeader>
 
-              <div className="flex flex-wrap gap-2">
-                {p.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
+                <CardContent className="flex h-full flex-col gap-4">
+                  <p className="text-sm text-muted-foreground">
+                    {p.description}
+                  </p>
 
-              <Button variant="outline" className="mt-auto self-end">
-                Ver projeto
-                <ArrowRight />
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+                  <div className="flex flex-wrap gap-2">
+                    {p.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <Button variant="outline" className="mt-auto self-end gap-2">
+                    Ver projeto
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        {/* setas */}
+        <CarouselPrevious className="hidden md:flex" />
+        <CarouselNext className="hidden md:flex" />
+
+        {/* dots */}
+        <div className="mt-4 flex items-center justify-center gap-2">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              aria-label={`Ir para o slide ${index + 1}`}
+              onClick={() => api?.scrollTo(index)}
+              className={cn(
+                "h-1.5 w-1.5 rounded-full transition",
+                index === selected ? "bg-foreground" : "bg-muted-foreground/30"
+              )}
+            />
+          ))}
+        </div>
+      </Carousel>
     </div>
   );
 }
