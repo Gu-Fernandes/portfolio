@@ -6,7 +6,6 @@ export function Footer() {
           © {new Date().getFullYear()} Gustavo Fernandes. Todos os direitos
           reservados.
         </p>
-        <p className="text-xs">Feito com Next.js + shadcn/ui.</p>
       </div>
     </footer>
   );

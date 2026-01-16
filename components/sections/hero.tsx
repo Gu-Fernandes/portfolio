@@ -6,10 +6,8 @@ export function HeroSection() {
   return (
     <section id="home" className="scroll-mt-24">
       <div className="space-y-5">
-        <p className="text-sm text-muted-foreground">Front-end Developer</p>
-
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-          Interfaces limpas, rápidas e bem construídas.
+        <h1 className="text-xl font-semibold tracking-tight sm:text-3xl">
+          Gustavo Fernandes - Desenvolvedor Front-end
         </h1>
 
         <p className="max-w-2xl text-muted-foreground">

@@ -4,16 +4,22 @@ import { Badge } from "../ui/badge";
 
 const PROJECTS = [
   {
-    title: "Café e Pauta",
+    title: "infoCrypto",
     description:
-      "Blog/site com categorias, navegação por âncoras e layout responsivo.",
-    tags: ["Next.js", "Tailwind", "TypeScript"],
+      "Trabalho de conclusão de curso. Aplicação web educacional sobre criptomoedas.",
+    tags: ["Next.js", "Tailwind CSS", "FastAPI", "TypeScript"],
   },
   {
-    title: "Dashboard de Chamados",
+    title: "Prospecção de Clientes",
     description:
-      "Kanban com filtros e modais padronizados, foco em UX e organização.",
-    tags: ["React", "shadcn/ui", "TanStack Query"],
+      "Sistema para auxiliar na prospecção de clientes B2B e gerenciar leads.",
+    tags: ["Next.js", "Tailwind CSS", "FastAPI", "PostgreSQL"],
+  },
+  {
+    title: "Jogo do Impostor",
+    description:
+      "Jogo offline desenvolvido em Next.js onde jogadores recebem uma palavra e tentam adivinhar quem é o impostor.",
+    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
 ] as const;
 
