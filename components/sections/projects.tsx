@@ -46,7 +46,7 @@ const PROJECTS = [
   {
     title: "Salas de Reunião",
     description:
-      "App de um ecosistema empresarial, utilizado para acompanhar disponibilidade e reservas das salas de reuniões do grupo.",
+      "App de um ecosistema empresarial, utilizado para acompanhar disponibilidade e reservas das salas de reuniões das empresas do grupo.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
   },
 ] as const;
