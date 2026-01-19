@@ -10,7 +10,7 @@ export function ProfilePhoto({
   alt = "Foto do Gu",
 }: Props) {
   return (
-    <div className="overflow-hidden border-b border-purple-600 rounded-full bg-muted">
+    <div className="overflow-hidden border-b border-purple-600 rounded-3xl bg-muted">
       <div className="relative aspect-[3/4] w-full sm:aspect-[4/5]">
         <Image
           src={src}
