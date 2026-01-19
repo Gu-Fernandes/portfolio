@@ -10,8 +10,8 @@ export function AboutSection() {
         Ajudo a transformar ideias em experiências, criando interfaces
         intuitivas e responsivas. Com atenção aos detalhes, buscando sempre
         entregar soluções superem as expectativas dos usuários.
-        <Button variant="link" className="p-0 sm:p-2">
-          <Link href="/about-me">Ver mais</Link>
+        <Button variant="link" className="px-2 sm:p-2">
+          <Link href="/about">Ver mais</Link>
         </Button>
       </p>
     </div>

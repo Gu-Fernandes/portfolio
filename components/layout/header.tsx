@@ -19,9 +19,9 @@ import { NAV_ITEMS } from "./nav-items";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur">
+    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="#home" className="font-semibold tracking-tight">
+        <Link href="/" className="font-semibold text-lg tracking-tight">
           Gustavo Fernandes
         </Link>
 
@@ -43,10 +43,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link href="#contact">Fale comigo</Link>
-          </Button>
-
           {/* Mobile */}
           <div className="md:hidden">
             <DropdownMenu>

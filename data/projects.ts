@@ -13,6 +13,7 @@ export const PROJECTS: readonly PortfolioProject[] = [
       "Valores das moedas atualizadas em tempo real",
       "Simulador BIP30 para entender melhor a criptografia",
       "Notícias relacionadas ao mercado de criptomoedas",
+      "Fórum para interação de usuários, com validação de IA"
     ],
     images: [
       { src: "/projects/infocrypto/info-1.png", alt: "infoCrypto - Home Page" },
