@@ -11,7 +11,9 @@ export function AboutSection() {
         intuitivas e responsivas. Com atenção aos detalhes, buscando sempre
         entregar soluções superem as expectativas dos usuários.
         <Button variant="link" className="px-2 sm:p-2">
-          <Link href="/about">Ver mais</Link>
+          <Link href="/about" className="text-purple-400">
+            Ver mais
+          </Link>
         </Button>
       </p>
     </div>

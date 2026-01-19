@@ -25,8 +25,8 @@ export function ContactSection() {
                 <Link href="/contact">Ir para contato</Link>
               </Button>
 
-              <Button asChild variant="outline">
-                <Link href="/#projects">Ver projetos</Link>
+              <Button asChild variant="outline" className="bg-card">
+                <Link href="/projects">Ver projetos</Link>
               </Button>
             </div>
           </CardContent>

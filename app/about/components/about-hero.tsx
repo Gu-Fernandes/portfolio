@@ -24,20 +24,13 @@ export function AboutHero() {
             </p>
 
             <div className="flex flex-wrap gap-2 pt-2">
-              <Button asChild>
-                <Link href="/#projects">Ver projetos</Link>
+              <Button>
+                <Link href="/projects">Ver projetos</Link>
               </Button>
 
               <Button asChild variant="outline">
-                <Link href="/#contact">Falar comigo</Link>
+                <Link href="/contact">Falar comigo</Link>
               </Button>
-            </div>
-          </div>
-
-          {/* “Avatar” simples (sem depender de componente extra) */}
-          <div className="grid place-items-center">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full border bg-muted text-lg font-semibold">
-              GU
             </div>
           </div>
         </div>

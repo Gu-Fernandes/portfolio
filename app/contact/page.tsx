@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ContactHero } from "./components/contact-hero";
 import { ContactMethods } from "./components/contact-methods";
 import { ContactForm } from "./components/contact-form";

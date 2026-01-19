@@ -16,6 +16,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const PROJECTS = [
   {
@@ -107,9 +108,17 @@ export function ProjectsSection() {
                     ))}
                   </div>
 
-                  <Button variant="outline" className="mt-auto self-end gap-2">
-                    Ver projeto
-                    <ArrowRight className="h-4 w-4" />
+                  <Button
+                    variant="outline"
+                    className="mt-auto bg-card self-end inline-flex items-center gap-2"
+                  >
+                    <Link
+                      href="/projects"
+                      className="inline-flex items-center gap-3"
+                    >
+                      Ver projeto
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -117,11 +126,9 @@ export function ProjectsSection() {
           ))}
         </CarouselContent>
 
-        {/* setas */}
         <CarouselPrevious className="hidden md:flex" />
         <CarouselNext className="hidden md:flex" />
 
-        {/* dots */}
         <div className="mt-4 flex items-center justify-center gap-2">
           {Array.from({ length: count }).map((_, index) => (
             <button

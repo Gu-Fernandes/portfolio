@@ -7,8 +7,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
@@ -53,7 +51,7 @@ export function ProjectImageCarousel({ images, title }: Props) {
         <CarouselContent>
           {images.map((img) => (
             <CarouselItem key={img.src} className="basis-full">
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg border bg-muted">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg border-b bg-muted">
                 <Image
                   src={img.src}
                   alt={img.alt || `${title} - imagem`}
@@ -66,13 +64,6 @@ export function ProjectImageCarousel({ images, title }: Props) {
             </CarouselItem>
           ))}
         </CarouselContent>
-
-        {hasMany && (
-          <>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </>
-        )}
       </Carousel>
 
       {hasMany && (

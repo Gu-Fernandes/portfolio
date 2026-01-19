@@ -28,7 +28,10 @@ export function AboutSections() {
 
         <CardContent className="space-y-3">
           {ABOUT.highlights.map((h) => (
-            <div key={h.label} className="rounded-md border p-3">
+            <div
+              key={h.label}
+              className="rounded-md border border-purple-600 p-3"
+            >
               <p className="text-xs text-muted-foreground">{h.label}</p>
               <p className="text-sm font-medium">{h.value}</p>
             </div>

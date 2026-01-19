@@ -19,10 +19,10 @@ function MethodRow({
   cta: string;
 }) {
   return (
-    <div className="flex items-start justify-between gap-4 rounded-md border p-4">
+    <div className="flex items-start justify-between gap-4 rounded-md shadow-lg border-t p-4">
       <div className="flex gap-3">
-        <div className="mt-0.5 rounded-md border bg-muted p-2">
-          <Icon className="h-4 w-4" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary/40">
+          <Icon className="h-5 w-5" />
         </div>
 
         <div className="space-y-1">

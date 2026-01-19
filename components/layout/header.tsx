@@ -30,10 +30,7 @@ export function Header() {
             <NavigationMenuList>
               {NAV_ITEMS.map((item) => (
                 <NavigationMenuItem key={item.href}>
-                  <NavigationMenuLink
-                    href={item.href}
-                    className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
-                  >
+                  <NavigationMenuLink href={item.href}>
                     {item.label}
                   </NavigationMenuLink>
                 </NavigationMenuItem>
